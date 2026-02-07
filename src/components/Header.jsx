@@ -120,12 +120,12 @@ const Header = ({ theme = 'dark' }) => {
                             )}
                         </div>
                     ))}
-                    <a
-                        href="https://wa.me/971543491544"
+                    <Link
+                        to="/contact"
                         className="px-5 py-2.5 bg-gold-500 text-deepBlue-900 text-sm font-semibold rounded-full hover:bg-gold-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 flex items-center gap-2"
                     >
-                        Book Free Consultation
-                    </a>
+                        Contact Me
+                    </Link>
                 </nav>
 
                 {/* Mobile Menu Button */}
