@@ -2,6 +2,40 @@ import React from 'react';
 import { MapPin, Phone, Mail, Linkedin } from 'lucide-react';
 
 const ConnectMe = () => {
+    const [formData, setFormData] = React.useState({
+        name: '',
+        phone: '',
+        email: '',
+        service: '',
+        industry: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const subject = `New Enquiry from ${formData.name}`;
+        const body = `
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Service Interest: ${formData.service}
+Industry: ${formData.industry}
+
+Message:
+${formData.message}
+        `;
+
+        window.location.href = `mailto:ayishamuneer4342@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
+
     return (
         <section className="py-20 bg-slate-50 relative overflow-hidden" id="connect">
             <div className="container mx-auto px-6 relative z-10">
@@ -53,8 +87,8 @@ const ConnectMe = () => {
                                 <div className="w-10 h-10 rounded-full bg-deepBlue-50 flex items-center justify-center text-deepBlue-900 shrink-0">
                                     <Mail size={20} />
                                 </div>
-                                <a href="mailto:marketing@ayishamuneer.com" className="text-slate-600 font-medium hover:text-gold-500 transition-colors">
-                                    marketing@ayishamuneer.com
+                                <a href="mailto:ayishamuneer4342@gmail.com" className="text-slate-600 font-medium hover:text-gold-500 transition-colors">
+                                    ayishamuneer4342@gmail.com
                                 </a>
                             </div>
 
@@ -101,25 +135,37 @@ const ConnectMe = () => {
                             <h3 className="text-2xl font-bold text-deepBlue-900 mb-2">Drop me a Hey</h3>
                             <div className="w-12 h-1 bg-gold-500 rounded-full mb-6"></div>
 
-                            <form className="space-y-4">
+                            <form onSubmit={handleSubmit} className="space-y-4">
                                 <div>
                                     <input
                                         type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
                                         placeholder="Your Name"
+                                        required
                                         className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
                                     />
                                 </div>
                                 <div>
                                     <input
                                         type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                         placeholder="Phone Number"
+                                        required
                                         className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
                                     />
                                 </div>
                                 <div>
                                     <input
                                         type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
                                         placeholder="Your Email"
+                                        required
                                         className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
                                     />
                                 </div>
@@ -127,10 +173,12 @@ const ConnectMe = () => {
                                 <div className="space-y-4">
                                     <div className="relative">
                                         <select
+                                            name="service"
+                                            value={formData.service}
+                                            onChange={handleChange}
                                             className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all appearance-none cursor-pointer"
-                                            defaultValue=""
                                         >
-                                            <option value="" disabled hidden className="text-slate-400">Select Service</option>
+                                            <option value="" disabled hidden>Select Service</option>
                                             <option value="web-development">Web Development</option>
                                             <option value="seo">SEO</option>
                                             <option value="performance-marketing">Performance Marketing</option>
@@ -146,8 +194,10 @@ const ConnectMe = () => {
                                     </div>
                                     <div className="relative">
                                         <select
+                                            name="industry"
+                                            value={formData.industry}
+                                            onChange={handleChange}
                                             className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all appearance-none cursor-pointer"
-                                            defaultValue=""
                                         >
                                             <option value="" disabled hidden>Select Industry</option>
                                             <option value="ecommerce">E-commerce</option>
@@ -168,6 +218,9 @@ const ConnectMe = () => {
                                 </div>
                                 <div>
                                     <textarea
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
                                         rows="4"
                                         placeholder="Your Message"
                                         className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all resize-none"

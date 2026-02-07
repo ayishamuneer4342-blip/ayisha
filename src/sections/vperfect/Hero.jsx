@@ -77,25 +77,57 @@ export default function Hero() {
                         </p>
                     </div>
 
+
                     {/* Contact Form */}
                     <div className="w-full lg:w-1/2 max-w-md bg-white rounded-2xl p-8 shadow-2xl text-slate-900">
                         <h3 className="text-2xl font-bold mb-2">Get Your Free Strategy Call</h3>
                         <p className="text-slate-600 mb-6 text-sm">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-                        <form className="space-y-4">
+                        <form
+                            className="space-y-4"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                const formData = new FormData(e.target);
+                                const data = Object.fromEntries(formData.entries());
+                                const subject = `Strategy Call Request from ${data.name}`;
+                                const body = `
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+                                `;
+                                window.location.href = `mailto:ayishamuneer4342@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                            }}
+                        >
                             <div>
                                 <label className="block text-sm font-semibold mb-1">Name</label>
-                                <input type="text" placeholder="John Doe" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all" />
+                                <input
+                                    name="name"
+                                    required
+                                    type="text"
+                                    placeholder="John Doe"
+                                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
+                                />
                             </div>
 
                             <div>
                                 <label className="block text-sm font-semibold mb-1">Email</label>
-                                <input type="email" placeholder="john@company.com" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all" />
+                                <input
+                                    name="email"
+                                    required
+                                    type="email"
+                                    placeholder="john@company.com"
+                                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
+                                />
                             </div>
 
                             <div>
                                 <label className="block text-sm font-semibold mb-1">Phone (Optional)</label>
-                                <input type="tel" placeholder="+1 (555) 000-0000" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all" />
+                                <input
+                                    name="phone"
+                                    type="tel"
+                                    placeholder="+1 (555) 000-0000"
+                                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
+                                />
                             </div>
 
                             <div className="pt-2">

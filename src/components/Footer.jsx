@@ -58,7 +58,7 @@ const Footer = () => {
                         <ul className="space-y-4 text-sm text-slate-600">
                             <li className="flex items-start gap-3">
                                 <Mail size={16} className="text-gold-500 shrink-0 mt-1" />
-                                <a href="mailto:marketing@ayishamuneer.com" className="hover:text-deepBlue-900 transition-colors">marketing@ayishamuneer.com</a>
+                                <a href="mailto:ayishamuneer4342@gmail.com" className="hover:text-deepBlue-900 transition-colors">ayishamuneer4342@gmail.com</a>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Phone size={16} className="text-gold-500 shrink-0 mt-1" />

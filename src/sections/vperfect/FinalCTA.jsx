@@ -24,7 +24,7 @@ export function FinalCTA() {
                 </div>
 
                 <p className="text-slate-400 text-sm">
-                    Not ready to talk? Email us at <a href="mailto:marketing@ayishamuneer.com" className="underline hover:text-gold-400">marketing@ayishamuneer.com</a> with your biggest <br className="md:hidden" /> website challenge for a free video breakdown.
+                    Not ready to talk? Email us at <a href="mailto:ayishamuneer4342@gmail.com" className="underline hover:text-gold-400">ayishamuneer4342@gmail.com</a> with your biggest <br className="md:hidden" /> website challenge for a free video breakdown.
                 </p>
             </div>
         </section>
