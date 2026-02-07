@@ -5,14 +5,7 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply bg-slate-200;
-  }
-
   body {
-    @apply bg-white text-slate-900 font-sans;
-    max-width: 1600px;
-    margin: 0 auto;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    @apply bg-slate-50 text-slate-900 font-sans;
   }
 }
