@@ -32,7 +32,7 @@ const Hero = () => {
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="max-w-2xl px-1 sm:px-0"
+                        className="max-w-2xl px-1 sm:px-0 pt-12"
                     >
                         <motion.h1
                             variants={itemVariants}

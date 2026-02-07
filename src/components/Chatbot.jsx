@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import avatarImage from '../assets/pic1.jpg';
+import avatarImage from '../assets/ayisha-cartoon.png';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -172,7 +172,7 @@ const Chatbot = () => {
                             <div key={index} className={`flex gap-2 ${msg.sender === 'user' ? 'flex-row-reverse' : ''}`}>
                                 {msg.sender === 'bot' && (
                                     <div className="w-8 h-8 rounded-full overflow-hidden border border-gray-100 shrink-0 self-start">
-                                        <img src={avatarImage} alt="Ayisha" className="w-full h-full object-cover" />
+                                        <img src={avatarImage} alt="Ayisha Avatar" className="w-full h-full object-cover" />
                                     </div>
                                 )}
                                 <div className={`p-3 rounded-xl max-w-[85%] shadow-sm border border-gray-100 text-sm ${msg.sender === 'user'
