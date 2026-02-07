@@ -52,6 +52,14 @@ const MarketingStrategyFAQ = () => {
                     "@type": "Answer",
                     "text": "Initial results from a digital marketing strategy typically appear within 30-60 days for paid campaigns and 90-180 days for organic channels like SEO. Full momentum builds over 6-12 months as all channels compound. The timeline depends on your industry, competition, and budget."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a full-time Marketing Manager or can I work with a Fractional CMO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A Fractional CMO is ideal for businesses that need strategic marketing leadership but don't require or can't afford a full-time executive. You get senior-level expertise at a fraction of the cost, with flexible engagement models. This works especially well for growing businesses, startups, or companies undergoing marketing transformation."
+                }
             }
         ]
     };
