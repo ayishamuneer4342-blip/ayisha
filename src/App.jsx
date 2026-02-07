@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
 import About from './pages/About';
+import Contact from './pages/Contact';
 import VPerfectLanding from './pages/VPerfectLanding';
 import BlogPage from './pages/BlogPage';
 import BlogPost from './pages/BlogPost';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/services/ai-integration" element={<AiIntegration />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

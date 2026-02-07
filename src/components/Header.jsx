@@ -38,6 +38,7 @@ const Header = ({ theme = 'dark' }) => {
             ]
         },
         { name: 'Blog', href: '/blog' },
+        { name: 'Contact', href: '/contact' },
     ];
 
     const WhatsAppIcon = () => (
