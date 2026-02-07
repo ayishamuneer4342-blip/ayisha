@@ -1,8 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { HelpCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { HelpCircle, ChevronDown } from 'lucide-react';
 
 const MarketingStrategyFAQ = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const toggleFAQ = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -76,7 +82,8 @@ const MarketingStrategyFAQ = () => {
                     </p>
                 </motion.div>
 
-                <div className="max-w-4xl mx-auto space-y-6">
+                {/* Two Column Grid */}
+                <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
                     {faqSchema.mainEntity.map((faq, index) => (
                         <motion.div
                             key={index}
@@ -84,15 +91,43 @@ const MarketingStrategyFAQ = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-slate-50 rounded-xl p-6 md:p-8 border border-slate-100 hover:shadow-lg transition-shadow"
+                            className="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
                         >
-                            <h3 className="text-lg md:text-xl font-bold text-deepBlue-900 mb-3 flex items-start gap-3">
-                                <span className="text-gold-500 text-2xl font-bold">Q{index + 1}.</span>
-                                <span>{faq.name}</span>
-                            </h3>
-                            <p className="text-slate-700 leading-relaxed ml-11">
-                                {faq.acceptedAnswer.text}
-                            </p>
+                            {/* Question Header - Clickable */}
+                            <button
+                                onClick={() => toggleFAQ(index)}
+                                className="w-full text-left p-6 flex items-start justify-between gap-4 hover:bg-slate-100 transition-colors"
+                            >
+                                <div className="flex items-start gap-3 flex-1">
+                                    <span className="text-gold-500 text-xl font-bold flex-shrink-0">Q{index + 1}.</span>
+                                    <h3 className="text-lg font-bold text-deepBlue-900">
+                                        {faq.name}
+                                    </h3>
+                                </div>
+                                <ChevronDown
+                                    className={`w-5 h-5 text-slate-600 flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''
+                                        }`}
+                                />
+                            </button>
+
+                            {/* Answer - Collapsible */}
+                            <AnimatePresence>
+                                {openIndex === index && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: 'auto', opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="overflow-hidden"
+                                    >
+                                        <div className="px-6 pb-6 pt-0">
+                                            <p className="text-slate-700 leading-relaxed ml-8">
+                                                {faq.acceptedAnswer.text}
+                                            </p>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </motion.div>
                     ))}
                 </div>
