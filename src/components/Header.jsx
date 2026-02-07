@@ -106,26 +106,13 @@ const Header = ({ theme = 'dark' }) => {
                                 <Link
                                     to={link.href.startsWith('/') ? link.href : undefined}
                                     href={!link.href.startsWith('/') ? link.href : undefined}
-                                    className={`text-sm font-medium transition-colors flex items-center gap-2 ${getTextColorClass()}`}
+                                    className={`text-sm font-medium transition-colors ${getTextColorClass()}`}
                                 >
-                                    {link.name === 'Contact' ? (
-                                        <>
-                                            <WhatsAppIcon />
-                                            <span>WhatsApp</span>
-                                        </>
-                                    ) : (
-                                        link.name
-                                    )}
+                                    {link.name}
                                 </Link>
                             )}
                         </div>
                     ))}
-                    <Link
-                        to="/contact"
-                        className="px-5 py-2.5 bg-deepBlue-900 text-white text-sm font-semibold rounded-lg hover:bg-deepBlue-800 transition-colors shadow-md hover:shadow-lg"
-                    >
-                        Contact Me
-                    </Link>
                 </nav>
 
                 {/* Mobile Menu Button */}
