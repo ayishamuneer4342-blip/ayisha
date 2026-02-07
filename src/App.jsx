@@ -17,12 +17,14 @@ import MarketingAutomation from './pages/services/MarketingAutomation';
 import LeadGeneration from './pages/services/LeadGeneration';
 import AiIntegration from './pages/services/AiIntegration';
 import Chatbot from './components/Chatbot';
+import FloatingContactButton from './components/FloatingContactButton';
 
 function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
         <Chatbot />
+        <FloatingContactButton />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
