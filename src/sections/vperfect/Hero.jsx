@@ -83,67 +83,112 @@ export default function Hero() {
                         <h3 className="text-2xl font-bold mb-2">Get Your Free Strategy Call</h3>
                         <p className="text-slate-600 mb-6 text-sm">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-                        <form
-                            className="space-y-4"
-                            onSubmit={(e) => {
-                                e.preventDefault();
-                                const formData = new FormData(e.target);
-                                const data = Object.fromEntries(formData.entries());
-                                const subject = `Strategy Call Request from ${data.name}`;
-                                const body = `
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
-                                `;
-                                window.location.href = `mailto:ayishamuneer4342@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                            }}
-                        >
-                            <div>
-                                <label className="block text-sm font-semibold mb-1">Name</label>
-                                <input
-                                    name="name"
-                                    required
-                                    type="text"
-                                    placeholder="John Doe"
-                                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold mb-1">Email</label>
-                                <input
-                                    name="email"
-                                    required
-                                    type="email"
-                                    placeholder="john@company.com"
-                                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold mb-1">Phone (Optional)</label>
-                                <input
-                                    name="phone"
-                                    type="tel"
-                                    placeholder="+1 (555) 000-0000"
-                                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
-                                />
-                            </div>
-
-                            <div className="pt-2">
-                                <button type="submit" className="w-full py-4 bg-gold-500 hover:bg-gold-400 text-deepBlue-900 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-gold-500/25">
-                                    Book My Free Call
-                                </button>
-                            </div>
-
-                            <p className="text-xs text-center text-slate-400 mt-4">
-                                We respect your privacy. No spam, ever.
-                            </p>
-                        </form>
+                        <HeroForm />
                     </div>
 
                 </div>
             </div>
         </section>
+    );
+}
+
+function HeroForm() {
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [submitStatus, setSubmitStatus] = React.useState(null);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            await import('../../utils/emailService').then(({ sendEmail }) =>
+                sendEmail({
+                    name: data.name,
+                    email: data.email,
+                    phone: data.phone,
+                    message: 'Requested Strategy Call via Hero Form',
+                    subject: 'Strategy Call Request (Hero)'
+                })
+            );
+
+            setSubmitStatus('success');
+            e.target.reset();
+        } catch (error) {
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    if (submitStatus === 'success') {
+        return (
+            <div className="text-center py-12 bg-white rounded-2xl">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle2 className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-deepBlue-900 mb-2">Request Received!</h3>
+                <p className="text-slate-600">I'll be in touch shortly to confirm your call.</p>
+                <button
+                    onClick={() => setSubmitStatus(null)}
+                    className="mt-6 text-gold-500 font-semibold hover:text-gold-600 transition-colors"
+                >
+                    Send another request
+                </button>
+            </div>
+        );
+    }
+
+    return (
+        <form className="space-y-4" onSubmit={handleSubmit}>
+            <div>
+                <label className="block text-sm font-semibold mb-1">Name</label>
+                <input
+                    name="name"
+                    required
+                    type="text"
+                    placeholder="John Doe"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
+                />
+            </div>
+
+            <div>
+                <label className="block text-sm font-semibold mb-1">Email</label>
+                <input
+                    name="email"
+                    required
+                    type="email"
+                    placeholder="john@company.com"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
+                />
+            </div>
+
+            <div>
+                <label className="block text-sm font-semibold mb-1">Phone (Optional)</label>
+                <input
+                    name="phone"
+                    type="tel"
+                    placeholder="+1 (555) 000-0000"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
+                />
+            </div>
+
+            <div className="pt-2">
+                <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full py-4 bg-gold-500 hover:bg-gold-400 text-deepBlue-900 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-gold-500/25 ${isSubmitting ? 'opacity-70 cursor-wait' : ''}`}
+                >
+                    {isSubmitting ? 'Booking...' : 'Book My Free Call'}
+                </button>
+            </div>
+
+            <p className="text-xs text-center text-slate-400 mt-4">
+                We respect your privacy. No spam, ever.
+            </p>
+        </form>
     );
 }

@@ -11,6 +11,9 @@ const FloatingContactButton = () => {
         message: ''
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -18,25 +21,33 @@ const FloatingContactButton = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
 
-        // Create mailto link
-        const subject = `Contact Form: ${formData.name}`;
-        const body = `
-Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email}
+        try {
+            await import('../utils/emailService').then(({ sendEmail }) =>
+                sendEmail({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    subject: 'Floating Contact Button Enquiry'
+                })
+            );
 
-Message:
-${formData.message}
-        `;
-
-        window.location.href = `mailto:ayishamuneer4342@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Reset form
-        setFormData({ name: '', phone: '', email: '', message: '' });
-        setIsOpen(false);
+            setSubmitStatus('success');
+            setTimeout(() => {
+                setFormData({ name: '', phone: '', email: '', message: '' });
+                setIsOpen(false);
+                setSubmitStatus(null);
+            }, 2000);
+        } catch (error) {
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -98,60 +109,77 @@ ${formData.message}
 
                         {/* Form */}
                         <form onSubmit={handleSubmit} className="p-6 space-y-4">
-                            <div>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Name"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-deepBlue-500 focus:border-transparent outline-none transition-all"
-                                />
-                            </div>
+                            {submitStatus === 'success' ? (
+                                <div className="text-center py-8">
+                                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <Send className="text-green-600" size={32} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-deepBlue-900 mb-2">Message Sent!</h3>
+                                    <p className="text-slate-600">Thanks for reaching out. I'll get back to you shortly.</p>
+                                </div>
+                            ) : (
+                                <>
+                                    <div>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            placeholder="Name"
+                                            required
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-deepBlue-500 focus:border-transparent outline-none transition-all"
+                                        />
+                                    </div>
 
-                            <div>
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    placeholder="Phone*"
-                                    required
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-deepBlue-500 focus:border-transparent outline-none transition-all"
-                                />
-                            </div>
+                                    <div>
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            placeholder="Phone*"
+                                            required
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-deepBlue-500 focus:border-transparent outline-none transition-all"
+                                        />
+                                    </div>
 
-                            <div>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Email*"
-                                    required
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-deepBlue-500 focus:border-transparent outline-none transition-all"
-                                />
-                            </div>
+                                    <div>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            placeholder="Email*"
+                                            required
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-deepBlue-500 focus:border-transparent outline-none transition-all"
+                                        />
+                                    </div>
 
-                            <div>
-                                <textarea
-                                    name="message"
-                                    placeholder="Message"
-                                    rows="4"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-deepBlue-500 focus:border-transparent outline-none transition-all resize-none"
-                                />
-                            </div>
+                                    <div>
+                                        <textarea
+                                            name="message"
+                                            placeholder="Message"
+                                            rows="4"
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-deepBlue-500 focus:border-transparent outline-none transition-all resize-none"
+                                        />
+                                    </div>
 
-                            <button
-                                type="submit"
-                                className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white font-bold py-4 px-6 rounded-lg hover:from-green-700 hover:to-green-800 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-                            >
-                                <Send size={18} />
-                                Submit
-                            </button>
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className={`w-full bg-gradient-to-r from-green-600 to-green-700 text-white font-bold py-4 px-6 rounded-lg hover:from-green-700 hover:to-green-800 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                    >
+                                        {isSubmitting ? 'Sending...' : (
+                                            <>
+                                                <Send size={18} />
+                                                Submit
+                                            </>
+                                        )}
+                                    </button>
+                                </>
+                            )}
                         </form>
                     </motion.div>
                 )}

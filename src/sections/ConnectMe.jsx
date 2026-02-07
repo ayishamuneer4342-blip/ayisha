@@ -11,6 +11,9 @@ const ConnectMe = () => {
         message: ''
     });
 
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [submitStatus, setSubmitStatus] = React.useState(null);
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -18,22 +21,43 @@ const ConnectMe = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
 
-        const subject = `New Enquiry from ${formData.name}`;
-        const body = `
-Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email}
-Service Interest: ${formData.service}
-Industry: ${formData.industry}
+        try {
+            await import('../utils/emailService').then(({ sendEmail }) =>
+                sendEmail({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    subject: `Website Enquiry: ${formData.service} (${formData.industry})`,
+                    additionalData: {
+                        Service: formData.service,
+                        Industry: formData.industry
+                    }
+                })
+            );
 
-Message:
-${formData.message}
-        `;
-
-        window.location.href = `mailto:ayishamuneer4342@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            setSubmitStatus('success');
+            setTimeout(() => {
+                setFormData({
+                    name: '',
+                    phone: '',
+                    email: '',
+                    service: '',
+                    industry: '',
+                    message: ''
+                });
+                setSubmitStatus(null);
+            }, 3000);
+        } catch (error) {
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -135,105 +159,118 @@ ${formData.message}
                             <h3 className="text-2xl font-bold text-deepBlue-900 mb-2">Drop me a Hey</h3>
                             <div className="w-12 h-1 bg-gold-500 rounded-full mb-6"></div>
 
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        placeholder="Your Name"
-                                        required
-                                        className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
-                                    />
+                            {submitStatus === 'success' ? (
+                                <div className="text-center py-12">
+                                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-deepBlue-900 mb-4">Message Sent!</h3>
+                                    <p className="text-slate-600 text-lg">Thank you for your enquiry. I will get back to you shortly.</p>
                                 </div>
-                                <div>
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        placeholder="Phone Number"
-                                        required
-                                        className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        placeholder="Your Email"
-                                        required
-                                        className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
-                                    />
-                                </div>
-
-                                <div className="space-y-4">
-                                    <div className="relative">
-                                        <select
-                                            name="service"
-                                            value={formData.service}
+                            ) : (
+                                <form onSubmit={handleSubmit} className="space-y-4">
+                                    <div>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            value={formData.name}
                                             onChange={handleChange}
-                                            className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all appearance-none cursor-pointer"
-                                        >
-                                            <option value="" disabled hidden>Select Service</option>
-                                            <option value="web-development">Web Development</option>
-                                            <option value="seo">SEO</option>
-                                            <option value="performance-marketing">Performance Marketing</option>
-                                            <option value="content-creation">Content Creation</option>
-                                            <option value="social-media">Social Media Marketing</option>
-                                            <option value="other">Other Services</option>
-                                        </select>
-                                        <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
-                                            <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                                                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path>
-                                            </svg>
+                                            placeholder="Your Name"
+                                            required
+                                            className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
+                                        />
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            placeholder="Phone Number"
+                                            required
+                                            className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
+                                        />
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            placeholder="Your Email"
+                                            required
+                                            className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
+                                        />
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <div className="relative">
+                                            <select
+                                                name="service"
+                                                value={formData.service}
+                                                onChange={handleChange}
+                                                className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all appearance-none cursor-pointer"
+                                            >
+                                                <option value="" disabled hidden>Select Service</option>
+                                                <option value="web-development">Web Development</option>
+                                                <option value="seo">SEO</option>
+                                                <option value="performance-marketing">Performance Marketing</option>
+                                                <option value="content-creation">Content Creation</option>
+                                                <option value="social-media">Social Media Marketing</option>
+                                                <option value="other">Other Services</option>
+                                            </select>
+                                            <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
+                                                <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div className="relative">
+                                            <select
+                                                name="industry"
+                                                value={formData.industry}
+                                                onChange={handleChange}
+                                                className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all appearance-none cursor-pointer"
+                                            >
+                                                <option value="" disabled hidden>Select Industry</option>
+                                                <option value="ecommerce">E-commerce</option>
+                                                <option value="real-estate">Real Estate</option>
+                                                <option value="healthcare">Healthcare</option>
+                                                <option value="education">Education</option>
+                                                <option value="technology">Technology/SaaS</option>
+                                                <option value="finance">Finance</option>
+                                                <option value="retail">Retail</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                            <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
+                                                <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path>
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="relative">
-                                        <select
-                                            name="industry"
-                                            value={formData.industry}
+                                    <div>
+                                        <textarea
+                                            name="message"
+                                            value={formData.message}
                                             onChange={handleChange}
-                                            className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all appearance-none cursor-pointer"
-                                        >
-                                            <option value="" disabled hidden>Select Industry</option>
-                                            <option value="ecommerce">E-commerce</option>
-                                            <option value="real-estate">Real Estate</option>
-                                            <option value="healthcare">Healthcare</option>
-                                            <option value="education">Education</option>
-                                            <option value="technology">Technology/SaaS</option>
-                                            <option value="finance">Finance</option>
-                                            <option value="retail">Retail</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                        <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
-                                            <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                                                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path>
-                                            </svg>
-                                        </div>
+                                            rows="4"
+                                            placeholder="Your Message"
+                                            className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all resize-none"
+                                        ></textarea>
                                     </div>
-                                </div>
-                                <div>
-                                    <textarea
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        rows="4"
-                                        placeholder="Your Message"
-                                        className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all resize-none"
-                                    ></textarea>
-                                </div>
 
-                                <button
-                                    type="submit"
-                                    className="w-full py-4 bg-deepBlue-900 hover:bg-deepBlue-800 text-white font-bold rounded-lg transition-colors shadow-lg shadow-deepBlue-900/10"
-                                >
-                                    Send Enquiry
-                                </button>
-                            </form>
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className={`w-full py-4 bg-deepBlue-900 hover:bg-deepBlue-800 text-white font-bold rounded-lg transition-colors shadow-lg shadow-deepBlue-900/10 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                    >
+                                        {isSubmitting ? 'Sending Enquiry...' : 'Send Enquiry'}
+                                    </button>
+                                </form>
+                            )}
                         </div>
 
                         {/* Decorative Elements around form */}

@@ -19,6 +19,9 @@ const FinalCTA = () => {
         challenge: ''
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -26,21 +29,41 @@ const FinalCTA = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
 
-        const subject = `Consultation Request from ${formData.name}`;
-        const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Website: ${formData.website}
+        try {
+            await import('../utils/emailService').then(({ sendEmail }) =>
+                sendEmail({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: 'Not Provided',
+                    message: formData.challenge,
+                    subject: 'Consultation Request (Final CTA)',
+                    additionalData: {
+                        Website: formData.website
+                    }
+                })
+            );
 
-Biggest Marketing Challenge:
-${formData.challenge}
-        `;
-
-        window.location.href = `mailto:ayishamuneer4342@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        setFormOpen(false);
+            setSubmitStatus('success');
+            setTimeout(() => {
+                setFormData({
+                    name: '',
+                    email: '',
+                    website: '',
+                    challenge: ''
+                });
+                setFormOpen(false);
+                setSubmitStatus(null);
+            }, 3000);
+        } catch (error) {
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -117,57 +140,71 @@ ${formData.challenge}
                                 </button>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-2">Name</label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors text-slate-900"
-                                        placeholder="Your Name"
-                                    />
+                            {submitStatus === 'success' ? (
+                                <div className="flex flex-col items-center justify-center py-20 text-center">
+                                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                                        <Check className="w-10 h-10 text-green-600" />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-deepBlue-900 mb-2">Request Received!</h3>
+                                    <p className="text-slate-600">I'll be in touch shortly to schedule your call.</p>
                                 </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors text-slate-900"
-                                        placeholder="you@company.com"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-2">Website (Optional)</label>
-                                    <input
-                                        type="url"
-                                        name="website"
-                                        value={formData.website}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors text-slate-900"
-                                        placeholder="https://..."
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-2">What is your biggest marketing challenge?</label>
-                                    <textarea
-                                        name="challenge"
-                                        value={formData.challenge}
-                                        onChange={handleChange}
-                                        rows="4"
-                                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors text-slate-900"
-                                        placeholder="Tell me about your business..."
-                                    />
-                                </div>
-                                <button type="submit" className="w-full py-4 bg-deepBlue-900 text-white font-bold rounded-lg hover:bg-deepBlue-800 transition-colors">
-                                    Submit Request
-                                </button>
-                            </form>
+                            ) : (
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div>
+                                        <label className="block text-sm font-medium text-slate-700 mb-2">Name</label>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors text-slate-900"
+                                            placeholder="Your Name"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors text-slate-900"
+                                            placeholder="you@company.com"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-slate-700 mb-2">Website (Optional)</label>
+                                        <input
+                                            type="url"
+                                            name="website"
+                                            value={formData.website}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors text-slate-900"
+                                            placeholder="https://..."
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-slate-700 mb-2">What is your biggest marketing challenge?</label>
+                                        <textarea
+                                            name="challenge"
+                                            value={formData.challenge}
+                                            onChange={handleChange}
+                                            rows="4"
+                                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors text-slate-900"
+                                            placeholder="Tell me about your business..."
+                                        />
+                                    </div>
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className={`w-full py-4 bg-deepBlue-900 text-white font-bold rounded-lg hover:bg-deepBlue-800 transition-colors ${isSubmitting ? 'opacity-70 cursor-wait' : ''}`}
+                                    >
+                                        {isSubmitting ? 'Submitting...' : 'Submit Request'}
+                                    </button>
+                                </form>
+                            )}
                         </motion.div>
                     </>
                 )}
