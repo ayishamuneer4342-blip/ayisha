@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import avatarImage from '../assets/ayisha-cartoon.png';
+import avatarImage from '../assets/ayisha-wave.png';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -143,12 +143,12 @@ const Chatbot = () => {
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans">
             {/* Chat Window */}
             {isOpen && (
-                <div className="bg-white rounded-lg shadow-xl w-80 mb-4 overflow-hidden border border-gray-200 transition-all duration-300 ease-in-out transform origin-bottom-right flex flex-col max-h-[500px]">
+                <div className="bg-white rounded-lg shadow-xl w-[450px] mb-6 overflow-hidden border border-gray-200 transition-all duration-300 ease-in-out transform origin-bottom-right flex flex-col max-h-[600px]">
                     {/* Header */}
                     <div className="bg-[#effae6] p-4 flex items-center justify-between border-b border-[#3f6212]/10 shrink-0">
                         <div className="flex items-center gap-3">
                             <div className="relative">
-                                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-sm">
                                     <img src={avatarImage} alt="Ayishu" className="w-full h-full object-cover" />
                                 </div>
                                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
@@ -167,11 +167,11 @@ const Chatbot = () => {
                     </div>
 
                     {/* Chat Body */}
-                    <div className="h-80 p-4 overflow-y-auto bg-gray-50 flex flex-col gap-3">
+                    <div className="h-[450px] p-5 overflow-y-auto bg-gray-50 flex flex-col gap-4">
                         {messages.map((msg, index) => (
                             <div key={index} className={`flex gap-2 ${msg.sender === 'user' ? 'flex-row-reverse' : ''}`}>
                                 {msg.sender === 'bot' && (
-                                    <div className="w-8 h-8 rounded-full overflow-hidden border border-gray-100 shrink-0 self-start">
+                                    <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-100 shrink-0 self-start">
                                         <img src={avatarImage} alt="Ayisha Avatar" className="w-full h-full object-cover" />
                                     </div>
                                 )}
@@ -211,7 +211,7 @@ const Chatbot = () => {
             {/* Toggle Button */}
             <button
                 onClick={toggleChat}
-                className="group relative flex items-center justify-center w-14 h-14 bg-[#3f6212] text-white rounded-full shadow-lg hover:bg-[#2d460d] transition-all duration-300 hover:scale-105"
+                className="group relative flex items-center justify-center w-20 h-20 bg-[#3f6212] text-white rounded-full shadow-lg hover:bg-[#2d460d] transition-all duration-300 hover:scale-105"
             >
                 {isOpen ? (
                     <X size={24} />
