@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-size: 75%; /* Reduces base font size by 25% (16px -> 12px) */
+  }
+  
   body {
     @apply bg-slate-50 text-slate-900 font-sans;
   }
