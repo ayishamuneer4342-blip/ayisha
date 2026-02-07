@@ -65,7 +65,7 @@ export default function Hero() {
                                 Contact Me
                             </a>
                             <a
-                                href="#portfolio"
+                                href="/services/web-design"
                                 className="inline-flex justify-center items-center px-8 py-3.5 border-2 border-slate-600 hover:border-white text-white font-semibold rounded-lg hover:bg-white/5 transition-all"
                             >
                                 View Portfolio
