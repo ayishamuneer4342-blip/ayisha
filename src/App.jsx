@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
+import About from './pages/About';
 import VPerfectLanding from './pages/VPerfectLanding';
 import BlogPage from './pages/BlogPage';
 import BlogPost from './pages/BlogPost';
@@ -23,6 +24,7 @@ function App() {
         <Chatbot />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/vperfect" element={<VPerfectLanding />} />
           <Route path="/services/seo" element={<SeoService />} />
           <Route path="/services/social-media" element={<SocialMedia />} />
