@@ -120,12 +120,23 @@ const Header = ({ theme = 'dark' }) => {
                             )}
                         </div>
                     ))}
-                    <Link
-                        to="/contact"
-                        className="px-5 py-2.5 bg-gold-500 text-deepBlue-900 text-sm font-semibold rounded-full hover:bg-gold-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 flex items-center gap-2"
-                    >
-                        Contact Me
-                    </Link>
+                    <div className="flex items-center gap-3">
+                        <Link
+                            to="/contact"
+                            className="px-5 py-2.5 bg-gold-500 text-deepBlue-900 text-sm font-semibold rounded-full hover:bg-gold-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 flex items-center gap-2"
+                        >
+                            Contact Me
+                        </Link>
+                        <a
+                            href="https://wa.me/971543491544"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2.5 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200"
+                            aria-label="WhatsApp"
+                        >
+                            <WhatsAppIcon />
+                        </a>
+                    </div>
                 </nav>
 
                 {/* Mobile Menu Button */}
