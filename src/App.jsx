@@ -28,7 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/vperfect" element={<VPerfectLanding />} />
+          <Route path="/webdevelopment" element={<VPerfectLanding />} />
           <Route path="/services/seo" element={<SeoService />} />
           <Route path="/services/social-media" element={<SocialMedia />} />
           <Route path="/services/paid-ads" element={<PaidAds />} />

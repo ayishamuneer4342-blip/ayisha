@@ -8,7 +8,7 @@ const hostname = 'https://ayishamuneer.com';
 // Define static routes
 const links = [
     { url: '/', changefreq: 'weekly', priority: 1.0 },
-    { url: '/vperfect', changefreq: 'weekly', priority: 0.9 },
+    { url: '/webdevelopment', changefreq: 'weekly', priority: 0.9 },
     { url: '/blog', changefreq: 'daily', priority: 0.8 },
 ];
 

@@ -32,7 +32,7 @@ export default function VPerfectLanding() {
                 title="Custom Web Development Services | VPerfect"
                 description="Custom web development that turns visitors into customers. Fast, beautiful, and built to grow your business."
                 keywords="Web Development, Custom Websites, React Development, Business Websites"
-                url="https://ayishamuneer.com/vperfect"
+                url="https://ayishamuneer.com/webdevelopment"
             />
             <SchemaJSONLD data={jsonLd} />
             <Header />
