@@ -62,7 +62,7 @@ const Header = ({ theme = 'dark' }) => {
                 }`}
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-                <Link to="/" className="block w-20 md:w-32">
+                <Link to="/" className="block w-16 md:w-24">
                     <img
                         src={logo}
                         alt="Ayisha Muneer"
