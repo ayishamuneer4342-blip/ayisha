@@ -18,11 +18,13 @@ const Header = ({ theme = 'dark' }) => {
     }, []);
 
     const navLinks = [
-        { name: 'SEO', href: '/services/seo' },
+        { name: 'Home', href: '/' },
+        { name: 'About', href: '/#about' },
         {
             name: 'Services',
             href: '/#services',
             dropdown: [
+                { name: 'SEO Services', href: '/services/seo' },
                 { name: 'Social Media Marketing', href: '/services/social-media' },
                 { name: 'Paid Advertising', href: '/services/paid-ads' },
                 { name: 'Content Marketing', href: '/services/content-marketing' },
@@ -35,8 +37,6 @@ const Header = ({ theme = 'dark' }) => {
                 { name: 'All Services', href: '/#services' }
             ]
         },
-        { name: 'Case Studies', href: '/#case-studies' },
-        { name: 'About', href: '/#about' },
         { name: 'Blog', href: '/blog' },
     ];
 
