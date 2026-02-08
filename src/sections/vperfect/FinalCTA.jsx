@@ -12,9 +12,14 @@ export function FinalCTA() {
                     Book a free 30-minute strategy call. We'll audit your current situation, discuss your goals, and map out exactly what you need to succeed online.
                 </p>
 
-                <button className="px-8 py-4 bg-gold-500 text-deepBlue-900 hover:bg-gold-400 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl mb-8">
+                <a
+                    href="https://wa.me/971543491544?text=Hi%20Ayisha%2C%20I%27d%20like%20to%20schedule%20my%20free%20strategy%20call."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-8 py-4 bg-gold-500 text-deepBlue-900 hover:bg-gold-400 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl mb-8"
+                >
                     Schedule Your Free Strategy Call
-                </button>
+                </a>
 
                 <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-slate-300 text-sm mb-12">
                     <div className="flex items-center gap-2"><Check className="w-4 h-4 text-gold-500" /> No-obligation consultation</div>
