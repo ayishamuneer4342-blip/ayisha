@@ -116,6 +116,10 @@ function HeroForm() {
             );
 
             setSubmitStatus('success');
+            setTimeout(() => {
+                const message = encodeURIComponent("Hi Ayisha, I'm looking for a website. Can we have a meeting?");
+                window.location.href = `https://wa.me/971543491544?text=${message}`;
+            }, 1000);
             e.target.reset();
         } catch (error) {
             setSubmitStatus('error');
@@ -131,12 +135,15 @@ function HeroForm() {
                     <CheckCircle2 className="w-8 h-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-bold text-deepBlue-900 mb-2">Request Received!</h3>
-                <p className="text-slate-600">I'll be in touch shortly to confirm your call.</p>
+                <p className="text-slate-600">Redirecting to WhatsApp...</p>
                 <button
-                    onClick={() => setSubmitStatus(null)}
+                    onClick={() => {
+                        const message = encodeURIComponent("Hi Ayisha, I'm looking for a website. Can we have a meeting?");
+                        window.location.href = `https://wa.me/971543491544?text=${message}`;
+                    }}
                     className="mt-6 text-gold-500 font-semibold hover:text-gold-600 transition-colors"
                 >
-                    Send another request
+                    Open WhatsApp manually
                 </button>
             </div>
         );
