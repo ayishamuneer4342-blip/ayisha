@@ -2,7 +2,7 @@ import React from 'react';
 
 export const post7 = {
     id: 7,
-    slug: "dubai-local-digital-marketing-strategist-benfits",
+    slug: "navigating-dubai-digital-landscape",
     title: "Navigating Dubai’s Digital Landscape: Why You Need a Local Digital Marketing Strategist",
     date: "February 7, 2026",
     readTime: "8 min read",
