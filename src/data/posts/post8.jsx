@@ -8,7 +8,7 @@ export const post8 = {
     readTime: "10 min read",
     category: "Digital Strategy",
     excerpt: "Discover why partnering with a Dubai-based digital marketing strategist gives your business a competitive edge over hiring remote or offshore agencies.",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea904ac66de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1582672317254-8c460d970337?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     keyTakeaways: [
         "Local strategists posses deep understanding of Dubai's unique cultural and consumer nuances.",
         "Face-to-face meetings build stronger trust and faster communication loops.",
