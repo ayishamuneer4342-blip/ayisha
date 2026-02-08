@@ -138,7 +138,7 @@ function Home() {
                 <MajorClients />
                 <WhoIWorkWith />
                 <FinalCTA />
-                <Certifications />
+
                 <Testimonials />
                 <MarketingStrategyFAQ />
                 <ConnectMe />

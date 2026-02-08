@@ -2,6 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Linkedin } from 'lucide-react';
 
+// Certification Logos
+import hubspotLogo from '../assets/logo-hubspot.png';
+import googleAnalyticsLogo from '../assets/logo-google-analytics.png';
+import googleAdsLogo from '../assets/logo-google-ads.png';
+import googleGarageLogo from '../assets/logo-google-garage.png';
+import semrushLogo from '../assets/logo-semrush.png';
+import metaLogo from '../assets/logo-meta.png';
+
 const Achievements = () => {
     return (
         <section className="bg-deepBlue-900 text-white py-20 relative overflow-hidden">
@@ -29,6 +37,21 @@ const Achievements = () => {
                             CONNECT WITH ME ON LINKEDIN
                             <Linkedin size={20} />
                         </a>
+
+                        {/* Certifications Block */}
+                        <div className="mt-12">
+                            <p className="text-gold-500 font-medium tracking-wider uppercase text-sm mb-6">Certified By</p>
+                            <div className="bg-white rounded-xl p-6 border border-slate-100 shadow-lg max-w-xl">
+                                <div className="grid grid-cols-3 gap-6 items-center justify-items-center">
+                                    <img src={googleGarageLogo} alt="Google Digital Garage" className="h-10 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                                    <img src={hubspotLogo} alt="HubSpot" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                                    <img src={semrushLogo} alt="Semrush" className="h-6 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                                    <img src={googleAnalyticsLogo} alt="Google Analytics" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                                    <img src={googleAdsLogo} alt="Google Ads" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                                    <img src={metaLogo} alt="Meta" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="flex items-center h-full">

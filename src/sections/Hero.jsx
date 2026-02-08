@@ -25,14 +25,14 @@ const Hero = () => {
             <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-deepBlue-900/5 blur-3xl rounded-full -translate-x-1/2 translate-y-1/2" />
 
             <div className="container mx-auto px-4 md:px-6 z-10">
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+                <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
                     {/* Left Content */}
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="max-w-2xl px-1 sm:px-0 pt-12"
+                        className="lg:col-span-7 px-1 sm:px-0 pt-24"
                     >
                         <motion.h1
                             variants={itemVariants}
@@ -103,7 +103,7 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
-                        className="relative flex items-center justify-center lg:h-[600px] mt-8 lg:mt-0"
+                        className="lg:col-span-5 relative flex items-center justify-center lg:h-[600px] mt-8 lg:mt-0"
                     >
                         {/* Main Image Placeholder - Professional Headshot vibe */}
                         <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-slate-200">
