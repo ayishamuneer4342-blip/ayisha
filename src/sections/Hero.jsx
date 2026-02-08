@@ -64,12 +64,12 @@ const Hero = () => {
                             >
                                 Book Your Free Consultation
                             </a>
-                            <Link
-                                to="/contact"
+                            <a
+                                href="#services"
                                 className="inline-flex justify-center items-center px-6 py-3.5 sm:px-8 sm:py-4 bg-transparent border-2 border-slate-200 text-slate-700 font-semibold rounded-lg hover:border-gold-500 hover:text-deepBlue-900 transition-all text-sm sm:text-base"
                             >
-                                Contact Me
-                            </Link>
+                                View My Services
+                            </a>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="hidden sm:block pt-6 sm:pt-8 border-t border-slate-200">
