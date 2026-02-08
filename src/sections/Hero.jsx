@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, TrendingUp, Users } from 'lucide-react';
 import pic1 from '../assets/pic1.jpg';
 import logoBridgewater from '../assets/logo-bridgewater.png';
@@ -38,7 +39,11 @@ const Hero = () => {
                             variants={itemVariants}
                             className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-deepBlue-900 mb-4 lg:mb-6 break-words"
                         >
-                            Digital Marketing Strategist in Dubai | <span className="text-transparent bg-clip-text bg-gradient-to-r from-deepBlue-800 to-gold-500">Grow Your Business with Data-Driven Strategy</span>
+                            Digital Marketing Strategist in Dubai <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-deepBlue-800 to-gold-500">
+                                Grow Your Business <br />
+                                with Data-Driven Strategy
+                            </span>
                         </motion.h1>
 
                         <motion.h2
@@ -59,12 +64,12 @@ const Hero = () => {
                             >
                                 Book Your Free Consultation
                             </a>
-                            <a
-                                href="#case-studies"
+                            <Link
+                                to="/contact"
                                 className="inline-flex justify-center items-center px-6 py-3.5 sm:px-8 sm:py-4 bg-transparent border-2 border-slate-200 text-slate-700 font-semibold rounded-lg hover:border-gold-500 hover:text-deepBlue-900 transition-all text-sm sm:text-base"
                             >
-                                See How I Grow Brands
-                            </a>
+                                Contact Me
+                            </Link>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="hidden sm:block pt-6 sm:pt-8 border-t border-slate-200">
