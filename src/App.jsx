@@ -40,8 +40,8 @@ function App() {
           <Route path="/services/lead-generation" element={<LeadGeneration />} />
           <Route path="/services/ai-integration" element={<AiIntegration />} />
           <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/:slug" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

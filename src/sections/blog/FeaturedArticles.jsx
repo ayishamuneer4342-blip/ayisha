@@ -48,7 +48,7 @@ const FeaturedArticles = () => {
                             <div className="space-y-3">
                                 <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{post.date}</p>
                                 <h3 className="text-xl font-bold text-deepBlue-900 leading-tight group-hover:text-gold-500 transition-colors">
-                                    <Link to={`/blog/${post.slug}`}>
+                                    <Link to={`/${post.slug}`}>
                                         {post.title}
                                     </Link>
                                 </h3>

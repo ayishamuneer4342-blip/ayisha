@@ -44,7 +44,7 @@ const BlogListing = () => {
                             key={post.id}
                             className="flex flex-col md:flex-row gap-6 group cursor-pointer border-b border-slate-100 pb-10"
                         >
-                            <Link to={`/blog/${post.slug}`} className="shrink-0 md:w-64 h-48 rounded-lg overflow-hidden">
+                            <Link to={`/${post.slug}`} className="shrink-0 md:w-64 h-48 rounded-lg overflow-hidden">
                                 <img
                                     src={post.image}
                                     alt={post.title}
@@ -59,7 +59,7 @@ const BlogListing = () => {
                                 </div>
 
                                 <h3 className="text-2xl font-bold text-deepBlue-900 mb-3 group-hover:text-gold-600 transition-colors leading-tight">
-                                    <Link to={`/blog/${post.slug}`}>
+                                    <Link to={`/${post.slug}`}>
                                         {post.title}
                                     </Link>
                                 </h3>
@@ -68,7 +68,7 @@ const BlogListing = () => {
                                     {post.excerpt}
                                 </p>
 
-                                <Link to={`/blog/${post.slug}`} className="inline-flex items-center text-deepBlue-900 font-bold text-xs uppercase tracking-widest hover:text-gold-600 transition-colors">
+                                <Link to={`/${post.slug}`} className="inline-flex items-center text-deepBlue-900 font-bold text-xs uppercase tracking-widest hover:text-gold-600 transition-colors">
                                     Read More <ArrowRight size={14} className="ml-2" />
                                 </Link>
                             </div>

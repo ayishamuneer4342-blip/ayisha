@@ -51,7 +51,7 @@ const BlogPost = () => {
                         "@type": "ListItem",
                         "position": 3,
                         "name": post.title,
-                        "item": `https://ayishamuneer.com/blog/${post.slug}`
+                        "item": `https://ayishamuneer.com/${post.slug}`
                     }
                 ]
             },
@@ -91,7 +91,7 @@ const BlogPost = () => {
                 description={post.excerpt}
                 image={post.image}
                 type="article"
-                url={`https://ayishamuneer.com/blog/${post.slug}`}
+                url={`https://ayishamuneer.com/${post.slug}`}
             />
             <SchemaJSONLD data={jsonLd} />
             <Header />

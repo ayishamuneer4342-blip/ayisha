@@ -28,7 +28,7 @@ const BlogSidebar = () => {
                 <ul className="space-y-6">
                     {popularPosts.map((post) => (
                         <li key={post.id} className="group">
-                            <Link to={`/blog/${post.slug}`} className="flex items-start gap-3">
+                            <Link to={`/${post.slug}`} className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
                                 <span className="text-slate-700 font-medium group-hover:text-deepBlue-900 transition-colors leading-relaxed">
                                     {post.title}
