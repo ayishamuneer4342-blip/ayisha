@@ -45,10 +45,10 @@ const Achievements = () => {
                                 <div className="grid grid-cols-3 gap-6 items-center justify-items-center">
                                     <img src={googleGarageLogo} alt="Google Digital Garage" className="h-10 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                                     <img src={hubspotLogo} alt="HubSpot" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                                    <img src={semrushLogo} alt="Semrush" className="h-6 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                                    <img src={semrushLogo} alt="Semrush" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                                     <img src={googleAnalyticsLogo} alt="Google Analytics" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                                     <img src={googleAdsLogo} alt="Google Ads" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                                    <img src={metaLogo} alt="Meta" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                                    <img src={metaLogo} alt="Meta" className="h-6 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                                 </div>
                             </div>
                         </div>
