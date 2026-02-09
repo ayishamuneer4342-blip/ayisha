@@ -1,5 +1,6 @@
 import React from 'react';
 import { Linkedin, Instagram, Facebook, Twitter, MapPin, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const Footer = () => {
@@ -43,12 +44,12 @@ const Footer = () => {
                     <div className="md:col-span-1">
                         <h4 className="font-bold text-deepBlue-900 mb-6">Services</h4>
                         <ul className="space-y-3 text-sm text-slate-600">
-                            <li>Social Media Marketing</li>
-                            <li>Paid Advertising</li>
-                            <li>Content Marketing</li>
-                            <li>Email Marketing</li>
-                            <li>Web Design</li>
-                            <li>Marketing Strategy</li>
+                            <li><Link to="/services/social-media" className="hover:text-gold-500 transition-colors">Social Media Marketing</Link></li>
+                            <li><Link to="/services/paid-ads" className="hover:text-gold-500 transition-colors">Paid Advertising</Link></li>
+                            <li><Link to="/services/content-marketing" className="hover:text-gold-500 transition-colors">Content Marketing</Link></li>
+                            <li><Link to="/services/email-marketing" className="hover:text-gold-500 transition-colors">Email Marketing</Link></li>
+                            <li><Link to="/services/web-design" className="hover:text-gold-500 transition-colors">Web Design</Link></li>
+                            <li><Link to="/services/marketing-strategy" className="hover:text-gold-500 transition-colors">Marketing Strategy</Link></li>
                         </ul>
                     </div>
 
