@@ -23,10 +23,8 @@ const MajorClients = () => {
         { name: "Neonights", logo: logoNeonights },
         { name: "Zapmart", logo: logoZapmart },
         { name: "AIVA", logo: logoAiva },
-        { name: "MWS", logo: logoMws },
         { name: "Client Partner", logo: logoClient1 },
         { name: "Client Partner", logo: logoClient2 },
-        { name: "Client Partner", logo: logoClient3 },
         { name: "Client Partner", logo: logoClient4 },
     ];
 

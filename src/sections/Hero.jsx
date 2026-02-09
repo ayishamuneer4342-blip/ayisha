@@ -101,10 +101,8 @@ const Hero = () => {
                                             <img src={logoNeonights} alt="Neonights" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
                                             <img src={logoZapmart} alt="Zapmart" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
                                             <img src={logoAiva} alt="AIVA" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
-                                            <img src={logoMws} alt="MWS" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
                                             <img src={logoClient1} alt="Client Partner" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
                                             <img src={logoClient2} alt="Client Partner" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
-                                            <img src={logoClient3} alt="Client Partner" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
                                             <img src={logoClient4} alt="Client Partner" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
                                         </React.Fragment>
                                     ))}
