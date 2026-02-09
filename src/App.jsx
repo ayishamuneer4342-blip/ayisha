@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import VPerfectLanding from './pages/VPerfectLanding';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import BlogPage from './pages/BlogPage';
 import BlogPost from './pages/BlogPost';
 import SeoService from './pages/SeoService';
@@ -41,6 +42,7 @@ function App() {
           <Route path="/services/ai-integration" element={<AiIntegration />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/:slug" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>
