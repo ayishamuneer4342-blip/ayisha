@@ -6,7 +6,12 @@ import pic1 from '../assets/pic1.jpg';
 import logoBridgewater from '../assets/logo-bridgewater.png';
 import logoNeonights from '../assets/logo-neonights.png';
 import logoZapmart from '../assets/logo-zapmart.webp';
-import logoGeneric from '../assets/logo-generic.png';
+import logoAiva from '../assets/logo-aiva.svg';
+import logoMws from '../assets/logo-mws.avif';
+import logoClient1 from '../assets/logo-client1.png';
+import logoClient2 from '../assets/logo-client2.png';
+import logoClient3 from '../assets/logo-client3.png';
+import logoClient4 from '../assets/logo-client4.webp';
 
 const Hero = () => {
     const containerVariants = {
@@ -92,10 +97,15 @@ const Hero = () => {
                                 >
                                     {[...Array(2)].map((_, i) => (
                                         <React.Fragment key={i}>
-                                            <img src={logoBridgewater} alt="Bridgewater - Digital Marketing Client Dubai" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
-                                            <img src={logoNeonights} alt="Neonights - Marketing Strategy Client UAE" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
-                                            <img src={logoZapmart} alt="Zapmart - SEO Client Dubai" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
-                                            <img src={logoGeneric} alt="Trusted Digital Marketing Partner Dubai" className="h-14 md:h-20 w-auto object-contain transition-all duration-300" />
+                                            <img src={logoBridgewater} alt="Bridgewater" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
+                                            <img src={logoNeonights} alt="Neonights" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
+                                            <img src={logoZapmart} alt="Zapmart" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
+                                            <img src={logoAiva} alt="AIVA" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
+                                            <img src={logoMws} alt="MWS" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
+                                            <img src={logoClient1} alt="Client Partner" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
+                                            <img src={logoClient2} alt="Client Partner" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
+                                            <img src={logoClient3} alt="Client Partner" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
+                                            <img src={logoClient4} alt="Client Partner" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
                                         </React.Fragment>
                                     ))}
                                 </motion.div>

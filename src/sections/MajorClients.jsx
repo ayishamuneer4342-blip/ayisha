@@ -5,6 +5,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import logoBridgewater from '../assets/logo-bridgewater.png';
 import logoNeonights from '../assets/logo-neonights.png';
 import logoZapmart from '../assets/logo-zapmart.webp';
+import logoAiva from '../assets/logo-aiva.svg';
+import logoMws from '../assets/logo-mws.avif';
+import logoClient1 from '../assets/logo-client1.png';
+import logoClient2 from '../assets/logo-client2.png';
+import logoClient3 from '../assets/logo-client3.png';
+import logoClient4 from '../assets/logo-client4.webp';
 
 
 
@@ -16,6 +22,12 @@ const MajorClients = () => {
         { name: "Bridgewater", logo: logoBridgewater },
         { name: "Neonights", logo: logoNeonights },
         { name: "Zapmart", logo: logoZapmart },
+        { name: "AIVA", logo: logoAiva },
+        { name: "MWS", logo: logoMws },
+        { name: "Client Partner", logo: logoClient1 },
+        { name: "Client Partner", logo: logoClient2 },
+        { name: "Client Partner", logo: logoClient3 },
+        { name: "Client Partner", logo: logoClient4 },
     ];
 
     return (
