@@ -8,6 +8,7 @@ const Header = ({ theme = 'dark' }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+    const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,6 +17,10 @@ const Header = ({ theme = 'dark' }) => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const toggleMobileDropdown = (name) => {
+        setActiveMobileDropdown(activeMobileDropdown === name ? null : name);
+    };
 
     const navLinks = [
         { name: 'Home', href: '/' },
@@ -138,19 +143,38 @@ const Header = ({ theme = 'dark' }) => {
                                 <div key={link.name}>
                                     {link.dropdown ? (
                                         <div className="space-y-2">
-                                            <span className="text-base font-bold text-slate-900 block">{link.name}</span>
-                                            <div className="pl-4 border-l-2 border-slate-100 space-y-2">
-                                                {link.dropdown.map(subItem => (
-                                                    <Link
-                                                        key={subItem.name}
-                                                        to={subItem.href}
-                                                        className="block text-sm font-medium text-slate-600 hover:text-gold-500"
-                                                        onClick={() => setMobileMenuOpen(false)}
+                                            <button
+                                                onClick={() => toggleMobileDropdown(link.name)}
+                                                className="flex items-center justify-between w-full text-base font-bold text-slate-900"
+                                            >
+                                                {link.name}
+                                                <ChevronDown
+                                                    size={16}
+                                                    className={`transition-transform duration-200 ${activeMobileDropdown === link.name ? 'rotate-180' : ''}`}
+                                                />
+                                            </button>
+
+                                            <AnimatePresence>
+                                                {activeMobileDropdown === link.name && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, height: 0 }}
+                                                        animate={{ opacity: 1, height: 'auto' }}
+                                                        exit={{ opacity: 0, height: 0 }}
+                                                        className="pl-4 border-l-2 border-slate-100 space-y-2 overflow-hidden"
                                                     >
-                                                        {subItem.name}
-                                                    </Link>
-                                                ))}
-                                            </div>
+                                                        {link.dropdown.map(subItem => (
+                                                            <Link
+                                                                key={subItem.name}
+                                                                to={subItem.href}
+                                                                className="block text-sm font-medium text-slate-600 hover:text-gold-500 py-1"
+                                                                onClick={() => setMobileMenuOpen(false)}
+                                                            >
+                                                                {subItem.name}
+                                                            </Link>
+                                                        ))}
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
                                         </div>
                                     ) : (
                                         <Link
