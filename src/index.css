@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans;
+    zoom: 0.75;
+    /* Zoom out by 25% */
+    -moz-transform: scale(0.75);
+    /* Firefox support */
+    -moz-transform-origin: 0 0;
+  }
+}
