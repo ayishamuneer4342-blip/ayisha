@@ -93,7 +93,7 @@ const ConnectMe = () => {
                                     <MapPin size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-deepBlue-900 text-sm mb-1">REACH ME THROUGH</h4>
+                                    <h3 className="font-bold text-deepBlue-900 text-sm mb-1">REACH ME THROUGH</h3>
                                     <p className="text-slate-600">
                                         147, Emarat Atrium, 1st Floor, Sheikh Zayed Road, Dubai
                                     </p>

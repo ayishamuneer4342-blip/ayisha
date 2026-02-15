@@ -85,9 +85,9 @@ const Testimonials = ({ theme = 'light' }) => {
                                     {testimonial.image ? <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" loading="lazy" /> : <User className="text-gray-500" size={32} />}
                                 </div>
                                 <div>
-                                    <h4 className={`font-bold ${currentStyle.name} text-sm uppercase`}>
+                                    <h3 className={`font-bold ${currentStyle.name} text-sm uppercase`}>
                                         {testimonial.name}
-                                    </h4>
+                                    </h3>
                                     <p className={`${currentStyle.role} text-xs uppercase font-bold`}>
                                         {testimonial.role}
                                     </p>
