@@ -125,6 +125,10 @@ const Hero = () => {
                                 alt="Ayisha Muneer - Digital Marketing Strategist in Dubai, UAE"
                                 title="Award-Winning Digital Marketing Strategist | Dubai, UAE"
                                 className="w-full h-full object-cover"
+                                width="448"
+                                height="597"
+                                fetchPriority="high"
+                                loading="eager"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-deepBlue-900/40 to-transparent" />
                         </div>

@@ -155,6 +155,7 @@ const WebsitePortfolio = () => {
                                                 ? "object-contain p-2 group-hover:scale-105"
                                                 : "object-cover group-hover:scale-105"
                                                 }`}
+                                            loading="lazy"
                                         />
                                         <div className="absolute inset-0 bg-deepBlue-900/0 group-hover:bg-deepBlue-900/40 transition-colors duration-300 flex items-center justify-center">
                                             <a

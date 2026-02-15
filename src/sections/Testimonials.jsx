@@ -82,7 +82,7 @@ const Testimonials = ({ theme = 'light' }) => {
                             <div className="flex items-center gap-6 mt-auto">
                                 <div className={`w-20 h-20 rounded-full flex items-center justify-center shrink-0 overflow-hidden ${currentStyle.imgContainer}`}>
                                     {/* Placeholder for image */}
-                                    {testimonial.image ? <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" /> : <User className="text-gray-500" size={32} />}
+                                    {testimonial.image ? <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" loading="lazy" /> : <User className="text-gray-500" size={32} />}
                                 </div>
                                 <div>
                                     <h4 className={`font-bold ${currentStyle.name} text-sm uppercase`}>
