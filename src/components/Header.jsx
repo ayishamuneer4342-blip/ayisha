@@ -42,7 +42,7 @@ const Header = ({ theme = 'dark' }) => {
                 { name: 'All Services', href: '/#services' }
             ]
         },
-        { name: 'Blog', href: '/blog' },
+        { name: 'Knowledge Hub', href: '/blog' },
         { name: 'Contact', href: '/contact' },
     ];
 
