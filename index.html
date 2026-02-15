@@ -2,8 +2,26 @@
 <html lang="en">
 
 <head>
+  <!-- Partytown -->
+  <script>
+    partytown = {
+      forward: ['dataLayer.push', 'gtag'],
+      resolveUrl: function (url) {
+        if (url.hostname === "www.googletagmanager.com") {
+          var proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
+          proxyUrl.searchParams.append('url', url.href);
+          return proxyUrl;
+        }
+        return url;
+      }
+    };
+  </script>
+  <script>
+    /* Partytown 0.8.0 - MIT builder.io */
+    !function (t, e, n, i, o, r, a, s, d, c, l, p) { function u() { p || (p = 1, "/" == (a = (r.lib || "/~partytown/") + (r.debug ? "debug/" : ""))[0] && (d = e.querySelectorAll('script[type="text/partytown"]'), i != t ? i.dispatchEvent(new CustomEvent("pt1", { detail: t, composed: !0 })) : (s = t.partytown || {}, d.length && ((c = e.createElement("script")).dataPartytown = "", c.innerHTML = d[0].innerHTML, c.type = "text/partytown", e.head.appendChild(c)), s.lib = a, s.integrations = n, s.proxies = o, s.debug = s.debug || !1, s.logStackTraces = s.logStackTraces || !1, s.forward = s.forward || [], s.forward.push("dataLayer.push")))) } u(), t.addEventListener("pt0", (function (t) { u(), (d = e.createElement(t.detail.type)).src = t.detail.src, t.detail.async && (d.async = !0), t.detail.defer && (d.defer = !0), t.detail.crossOrigin && (d.crossOrigin = t.detail.crossOrigin), e.head.appendChild(d) })) }(window, document, [], window, [], window);
+  </script>
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
+  <script type="text/partytown">(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
@@ -13,8 +31,8 @@
     })(window, document, 'script', 'dataLayer', 'GTM-KQ2SQSVQ');</script>
   <!-- End Google Tag Manager -->
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17930765863"></script>
-  <script>
+  <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=AW-17930765863"></script>
+  <script type="text/partytown">
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
@@ -33,7 +51,14 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ2SQSVQ" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div id="root"></div>
+  <div id="root">
+    <!-- Static LCP Image for immediate paint -->
+    <div style="position:fixed;inset:0;z-index:-1;background-color:#0f172a;">
+      <img src="/assets/pic1.webp" alt="Ayisha Muneer - Digital Marketing Strategist in Dubai, UAE"
+        style="width:100%;height:100%;object-fit:cover;object-position:top;" width="448" height="597"
+        fetchpriority="high" loading="eager" decoding="async">
+    </div>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
