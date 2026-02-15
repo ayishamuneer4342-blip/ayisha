@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, TrendingUp, Users } from 'lucide-react';
-import pic1 from '../assets/pic1.webp';
 import logoBridgewater from '../assets/logo-bridgewater.webp';
 import logoNeonights from '../assets/logo-neonights.webp';
 import logoZapmart from '../assets/logo-zapmart.webp';
@@ -121,7 +120,7 @@ const Hero = () => {
                         {/* Main Image Placeholder - Professional Headshot vibe */}
                         <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-slate-200">
                             <img
-                                src={pic1}
+                                src="/assets/pic1.webp"
                                 alt="Ayisha Muneer - Digital Marketing Strategist in Dubai, UAE"
                                 title="Award-Winning Digital Marketing Strategist | Dubai, UAE"
                                 className="w-full h-full object-cover"
