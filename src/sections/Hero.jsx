@@ -43,10 +43,9 @@ const Hero = () => {
                             variants={itemVariants}
                             className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-deepBlue-900 mb-4 lg:mb-6 break-words"
                         >
-                            Digital Marketing Strategist in Dubai <br />
+                            Digital Marketing Strategist in Dubai, UAE <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-deepBlue-800 to-gold-500">
-                                Grow Your Business <br />
-                                with Data-Driven Strategy
+                                Grow Your Business Online
                             </span>
                         </motion.h1>
 
@@ -54,11 +53,11 @@ const Hero = () => {
                             variants={itemVariants}
                             className="text-lg sm:text-xl lg:text-2xl font-semibold text-slate-700 mb-4"
                         >
-                            Award-Winning Marketing Strategist Helping UAE Businesses Scale with SEO, Paid Ads & Automation
+                            SEO Consultant, Performance Marketing Specialist & Lead Generation Expert
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-sm sm:text-lg text-slate-600 mb-6 lg:mb-8 leading-relaxed">
-                            As a Digital Marketing Strategist in Dubai, I help businesses across the UAE transform their online presence into a revenue-generating machine. Stop guessing, stop boosting random posts. Start running data-driven marketing that finally brings you qualified leads and sales.
+                            As a Digital Marketing Strategist and SEO Consultant in Dubai, I specialize in performance marketing, Google Ads, Meta Ads, and lead generation strategies. I help businesses across the UAE transform their online presence into a revenue-generating machine through data-driven SEO, PPC campaigns, and marketing automation.
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 lg:mb-10">
