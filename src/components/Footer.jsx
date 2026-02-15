@@ -19,10 +19,10 @@ const Footer = () => {
                         </p>
 
                         <div className="flex gap-4 mt-6">
-                            <a href="https://www.linkedin.com/in/ayishamuneer/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-gold-500 transition-colors">
+                            <a href="https://www.linkedin.com/in/ayishamuneer/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-gold-500 transition-colors" aria-label="LinkedIn Profile">
                                 <Linkedin size={20} />
                             </a>
-                            <a href="https://www.instagram.com/brandingbysha?igsh=MnVsM29ubWM5eTVv&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-gold-500 transition-colors">
+                            <a href="https://www.instagram.com/brandingbysha?igsh=MnVsM29ubWM5eTVv&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-gold-500 transition-colors" aria-label="Instagram Profile">
                                 <Instagram size={20} />
                             </a>
                         </div>
