@@ -62,6 +62,8 @@ const MajorClients = () => {
                                         <img
                                             src={client.logo}
                                             alt={client.name}
+                                            width="120"
+                                            height="80"
                                             className="h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-105"
                                         />
                                     </div>

@@ -12,7 +12,7 @@ const Footer = () => {
                     {/* Brand Column */}
                     <div className="md:col-span-1">
                         <a href="#" className="block w-24 mb-6">
-                            <img src={logo} alt="Ayisha Muneer" className="w-full h-auto" />
+                            <img src={logo} alt="Ayisha Muneer" width="96" height="96" className="w-full h-auto" />
                         </a>
                         <p className="text-slate-600 text-sm mb-6 leading-relaxed">
                             Freelance Digital Marketing Expert based in Dubai, UAE. Helping businesses turn strategy into revenue.

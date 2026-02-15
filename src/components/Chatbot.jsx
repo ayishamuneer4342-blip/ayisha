@@ -149,7 +149,7 @@ const Chatbot = () => {
                         <div className="flex items-center gap-3">
                             <div className="relative">
                                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-sm">
-                                    <img src={avatarImage} alt="Ayishu" className="w-full h-full object-cover" />
+                                    <img src={avatarImage} alt="Ayishu" width="56" height="56" className="w-full h-full object-cover" />
                                 </div>
                                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
                             </div>
@@ -172,7 +172,7 @@ const Chatbot = () => {
                             <div key={index} className={`flex gap-2 ${msg.sender === 'user' ? 'flex-row-reverse' : ''}`}>
                                 {msg.sender === 'bot' && (
                                     <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-100 shrink-0 self-start">
-                                        <img src={avatarImage} alt="Ayisha Avatar" className="w-full h-full object-cover" />
+                                        <img src={avatarImage} alt="Ayisha Avatar" width="40" height="40" className="w-full h-full object-cover" />
                                     </div>
                                 )}
                                 <div className={`p-3 rounded-xl max-w-[85%] shadow-sm border border-gray-100 text-sm ${msg.sender === 'user'
@@ -217,7 +217,7 @@ const Chatbot = () => {
                     <X size={24} />
                 ) : (
                     <div className="w-full h-full rounded-full overflow-hidden border-2 border-white">
-                        <img src={avatarImage} alt="Chat" className="w-full h-full object-cover" />
+                        <img src={avatarImage} alt="Chat" width="80" height="80" className="w-full h-full object-cover" />
                     </div>
                 )}
 

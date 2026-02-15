@@ -72,6 +72,8 @@ const Header = ({ theme = 'dark' }) => {
                     <img
                         src={logo}
                         alt="Ayisha Muneer"
+                        width="96"
+                        height="96"
                         className={`w-full h-auto transition-all duration-300 ${getLogoClass()}`}
                     />
                 </Link>
