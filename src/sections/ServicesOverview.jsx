@@ -124,7 +124,7 @@ const ServicesOverview = () => {
                                     to={service.link}
                                     className="text-xs font-semibold text-deepBlue-900 border-b border-gold-500 pb-0.5 hover:text-gold-500 transition-colors z-20 relative"
                                 >
-                                    Learn More
+                                    View {service.title}
                                 </Link>
                             )}
                         </motion.div>
