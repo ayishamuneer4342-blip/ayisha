@@ -101,7 +101,7 @@ const WebsitePortfolio = () => {
             <div className="container mx-auto px-6 relative">
 
                 <div className="mb-12 text-center">
-                    <span className="text-gold-500 font-semibold tracking-wider text-sm uppercase mb-3 block">
+                    <span className="text-gold-700 font-semibold tracking-wider text-sm uppercase mb-3 block">
                         My Development Work
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold text-deepBlue-900">

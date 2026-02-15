@@ -19,11 +19,11 @@ const Achievements = () => {
             <div className="container mx-auto px-6 relative z-10">
 
                 {/* Top Section */}
-                <div className="grid lg:grid-cols-2 gap-12 items-start opacity-70 mb-16">
+                <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
                     <div>
                         <div className="flex items-center gap-4 mb-4">
                             <div className="h-0.5 w-12 bg-gold-500"></div>
-                            <span className="text-gold-500 font-medium tracking-wider uppercase text-sm">The Success Stories</span>
+                            <span className="text-gold-400 font-medium tracking-wider uppercase text-sm">The Success Stories</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-8">
                             MY PROUDEST<br />ACHIEVEMENTS
@@ -40,7 +40,7 @@ const Achievements = () => {
 
                         {/* Certifications Block */}
                         <div className="mt-12">
-                            <p className="text-gold-500 font-medium tracking-wider uppercase text-sm mb-6">Certified By</p>
+                            <p className="text-gold-400 font-medium tracking-wider uppercase text-sm mb-6">Certified By</p>
                             <div className="bg-white rounded-xl p-6 border border-slate-100 shadow-lg max-w-xl">
                                 <div className="grid grid-cols-3 gap-6 items-center justify-items-center">
                                     <img src={googleGarageLogo} alt="Google Digital Garage" className="h-10 w-auto object-contain hover:scale-110 transition-transform duration-300" />
@@ -58,10 +58,10 @@ const Achievements = () => {
                         <div className="border-l-2 border-white/10 pl-8 lg:pl-12 py-4">
                             <div className="space-y-4 text-base lg:text-lg text-slate-300 leading-relaxed text-left">
                                 <p>
-                                    Hey, I’m <strong>AYISHA MUNEER</strong>, a <a href="https://www.linkedin.com/in/ayishamuneer/" target="_blank" rel="noopener noreferrer" className="text-gold-500 hover:text-white transition-colors underline decoration-gold-500/50">Freelance Digital Marketing Strategist in Dubai</a> with deep insight into human behaviour and the creation of impactful results. I hold a Bachelor’s degree in <a href="https://www.britannica.com/science/psychology" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-500 underline decoration-slate-500/50 transition-colors">Psychology</a>, and acquiring certification for marketing provided the platform to have hands-on knowledge that blends to create uniqueness in the digital landscape.
+                                    Hey, I’m <strong>AYISHA MUNEER</strong>, a <a href="https://www.linkedin.com/in/ayishamuneer/" target="_blank" rel="noopener noreferrer" className="text-gold-400 hover:text-white transition-colors underline decoration-gold-500/50">Freelance Digital Marketing Strategist in Dubai</a> with deep insight into human behaviour and the creation of impactful results. I hold a Bachelor’s degree in <a href="https://www.britannica.com/science/psychology" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 underline decoration-slate-500/50 transition-colors">Psychology</a>, and acquiring certification for marketing provided the platform to have hands-on knowledge that blends to create uniqueness in the digital landscape.
                                 </p>
                                 <p>
-                                    As a <a href="https://www.instagram.com/brandingbysha?igsh=MnVsM29ubWM5eTVv&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gold-500 hover:text-white transition-colors underline decoration-gold-500/50">Freelance Digital Marketing Strategist in Dubai</a>, I deliver tailored solutions across key areas such as <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-500 underline decoration-slate-500/50 transition-colors">SEO</a>, <a href="https://www.wordstream.com/search-engine-marketing" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-500 underline decoration-slate-500/50 transition-colors">SEM</a>, <a href="https://www.wordstream.com/pay-per-click-advertising" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-500 underline decoration-slate-500/50 transition-colors">PPC</a>, SMM, <a href="https://www.semrush.com/blog/content-creation/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-500 underline decoration-slate-500/50 transition-colors">Content creation</a>, and <a href="https://www.w3schools.com/whatis/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-500 underline decoration-slate-500/50 transition-colors">Web development</a>. Leveraging expertise in local SEO specific to your industry, I ensure your brand reaches its targeted audience, driving measurable growth and success.
+                                    As a <a href="https://www.instagram.com/brandingbysha?igsh=MnVsM29ubWM5eTVv&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gold-400 hover:text-white transition-colors underline decoration-gold-500/50">Freelance Digital Marketing Strategist in Dubai</a>, I deliver tailored solutions across key areas such as <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 underline decoration-slate-500/50 transition-colors">SEO</a>, <a href="https://www.wordstream.com/search-engine-marketing" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 underline decoration-slate-500/50 transition-colors">SEM</a>, <a href="https://www.wordstream.com/pay-per-click-advertising" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 underline decoration-slate-500/50 transition-colors">PPC</a>, SMM, <a href="https://www.semrush.com/blog/content-creation/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 underline decoration-slate-500/50 transition-colors">Content creation</a>, and <a href="https://www.w3schools.com/whatis/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 underline decoration-slate-500/50 transition-colors">Web development</a>. Leveraging expertise in local SEO specific to your industry, I ensure your brand reaches its targeted audience, driving measurable growth and success.
                                 </p>
                                 <p>
                                     I believe that effective digital marketing is less about mastering algorithms and more about understanding people. By blending insights from psychology with cutting-edge digital tools, I empower businesses to unlock their full potential in today’s dynamic digital landscape. Let’s transform your online presence and achieve remarkable results together.
@@ -89,7 +89,7 @@ const Achievements = () => {
                             <div className="text-sm font-bold tracking-wider text-slate-500 uppercase group-hover:text-slate-700">
                                 Years of Experience
                             </div>
-                            <div className="text-xs text-slate-400 mt-1 uppercase">
+                            <div className="text-xs text-slate-500 mt-1 uppercase">
                                 In Digital Marketing
                             </div>
                         </div>
@@ -102,7 +102,7 @@ const Achievements = () => {
                             <div className="text-sm font-bold tracking-wider text-slate-500 uppercase group-hover:text-slate-700">
                                 Ad Budget Managed
                             </div>
-                            <div className="text-xs text-slate-400 mt-1 uppercase">
+                            <div className="text-xs text-slate-500 mt-1 uppercase">
                                 Across Platforms
                             </div>
                         </div>
@@ -115,7 +115,7 @@ const Achievements = () => {
                             <div className="text-sm font-bold tracking-wider text-slate-500 uppercase group-hover:text-slate-700">
                                 Satisfied Clients
                             </div>
-                            <div className="text-xs text-slate-400 mt-1 uppercase">
+                            <div className="text-xs text-slate-500 mt-1 uppercase">
                                 Globally
                             </div>
                         </div>
@@ -128,7 +128,7 @@ const Achievements = () => {
                             <div className="text-sm font-bold tracking-wider text-slate-500 uppercase group-hover:text-slate-700">
                                 Revenue Generated
                             </div>
-                            <div className="text-xs text-slate-400 mt-1 uppercase">
+                            <div className="text-xs text-slate-500 mt-1 uppercase">
                                 For My Clients
                             </div>
                         </div>

@@ -14,7 +14,7 @@ const Footer = () => {
                         <a href="#" className="block w-24 mb-6">
                             <img src={logo} alt="Ayisha Muneer" className="w-full h-auto" />
                         </a>
-                        <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+                        <p className="text-slate-600 text-sm mb-6 leading-relaxed">
                             Freelance Digital Marketing Expert based in Dubai, UAE. Helping businesses turn strategy into revenue.
                         </p>
 
@@ -74,10 +74,10 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-slate-100 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-slate-500 text-sm">
                         © 2025 Ayisha Muneer. All Rights Reserved.
                     </p>
-                    <p className="text-slate-300 text-xs text-center md:text-right max-w-xs">
+                    <p className="text-slate-400 text-xs text-center md:text-right max-w-xs">
                         Designed to convert. Built for growth.
                     </p>
                 </div>

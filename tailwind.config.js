@@ -10,6 +10,8 @@ export default {
         gold: {
           400: '#D4AF37',
           500: '#C5A028',
+          600: '#A4841D', // Darker for text on white
+          700: '#856404', // Even darker for better contrast
         },
         deepBlue: {
           800: '#1B263B',

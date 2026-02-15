@@ -67,7 +67,7 @@ const ConnectMe = () => {
 
                     {/* Left Column: Content & Contact Info */}
                     <div className="flex flex-col h-full">
-                        <span className="text-gold-500 font-bold tracking-wider text-sm uppercase mb-4 block">
+                        <span className="text-gold-700 font-bold tracking-wider text-sm uppercase mb-4 block">
                             I'D LOVE TO HEAR FROM YOU
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-deepBlue-900 mb-6 relative inline-block">
