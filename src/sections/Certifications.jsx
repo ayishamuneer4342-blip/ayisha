@@ -31,32 +31,32 @@ const Certifications = () => {
                         {/* HubSpot */}
                         {/* HubSpot */}
                         <a href="https://academy.hubspot.com/courses?page=1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer">
-                            <img src={hubspotLogo} alt="HubSpot" width="120" height="48" className="h-10 md:h-12 w-auto object-contain" />
+                            <img src={hubspotLogo} alt="HubSpot" width="120" height="40" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                         </a>
 
                         {/* Google Analytics */}
                         <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer">
-                            <img src={googleAnalyticsLogo} alt="Google Analytics" width="120" height="48" className="h-10 md:h-12 w-auto object-contain" />
+                            <img src={googleAnalyticsLogo} alt="Google Analytics" width="120" height="40" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                         </a>
 
                         {/* Google Ads */}
                         <a href="https://www.wordstream.com/blog/ws/2022/03/21/how-to-run-google-ads" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer">
-                            <img src={googleAdsLogo} alt="Google Ads" width="120" height="48" className="h-10 md:h-12 w-auto object-contain" />
+                            <img src={googleAdsLogo} alt="Google Ads" width="120" height="40" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                         </a>
 
                         {/* Google Digital Garage */}
                         <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer">
-                            <img src={googleGarageLogo} alt="Google Digital Garage" width="140" height="56" className="h-12 md:h-14 w-auto object-contain" />
+                            <img src={googleGarageLogo} alt="Google Digital Garage" width="140" height="50" className="h-10 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                         </a>
 
                         {/* Semrush */}
                         <a href="https://www.semrush.com/blog/seo-certification/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer">
-                            <img src={semrushLogo} alt="Semrush" width="100" height="40" className="h-8 md:h-10 w-auto object-contain" />
+                            <img src={semrushLogo} alt="Semrush" width="100" height="40" className="h-8 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                         </a>
 
                         {/* Meta */}
                         <a href="https://en-gb.facebook.com/business/learn/certification" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer">
-                            <img src={metaLogo} alt="Meta" width="80" height="40" className="h-8 md:h-10 w-auto object-contain" />
+                            <img src={metaLogo} alt="Meta" width="80" height="30" className="h-6 w-auto object-contain hover:scale-110 transition-transform duration-300" />
                         </a>
 
                     </div>
