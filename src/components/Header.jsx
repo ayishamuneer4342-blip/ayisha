@@ -124,6 +124,7 @@ const Header = ({ theme = 'dark' }) => {
                 <button
                     className={`md:hidden ${isScrolled || theme === 'light' ? 'text-slate-900' : 'text-white'}`}
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle mobile menu"
                 >
                     {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
