@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import logoBridgewater from '../assets/logo-bridgewater.png';
-import logoNeonights from '../assets/logo-neonights.png';
+import logoBridgewater from '../assets/logo-bridgewater.webp';
+import logoNeonights from '../assets/logo-neonights.webp';
 import logoZapmart from '../assets/logo-zapmart.webp';
 import logoAiva from '../assets/logo-aiva.svg';
 import logoMws from '../assets/logo-mws.avif';
-import logoClient1 from '../assets/logo-client1.png';
-import logoClient2 from '../assets/logo-client2.png';
-import logoClient3 from '../assets/logo-client3.png';
+import logoClient1 from '../assets/logo-client1.webp';
+import logoClient2 from '../assets/logo-client2.webp';
+import logoClient3 from '../assets/logo-client3.webp';
 import logoClient4 from '../assets/logo-client4.webp';
 
 

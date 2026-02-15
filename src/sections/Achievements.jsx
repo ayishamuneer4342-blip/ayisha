@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Linkedin } from 'lucide-react';
 
 // Certification Logos
-import hubspotLogo from '../assets/logo-hubspot.png';
-import googleAnalyticsLogo from '../assets/logo-google-analytics.png';
-import googleAdsLogo from '../assets/logo-google-ads.png';
-import googleGarageLogo from '../assets/logo-google-garage.png';
-import semrushLogo from '../assets/logo-semrush.png';
-import metaLogo from '../assets/logo-meta.png';
+import hubspotLogo from '../assets/logo-hubspot.webp';
+import googleAnalyticsLogo from '../assets/logo-google-analytics.webp';
+import googleAdsLogo from '../assets/logo-google-ads.webp';
+import googleGarageLogo from '../assets/logo-google-garage.webp';
+import semrushLogo from '../assets/logo-semrush.webp';
+import metaLogo from '../assets/logo-meta.webp';
 
 const Achievements = () => {
     return (

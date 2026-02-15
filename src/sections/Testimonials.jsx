@@ -1,8 +1,8 @@
 import React from 'react';
 import { Quote, User } from 'lucide-react';
-import muhamedImage from '../assets/muhmed-afsal.png';
-import nihalImage from '../assets/nihal-roshan.png';
-import abdulImage from '../assets/abdul-muneer.png';
+import muhamedImage from '../assets/muhmed-afsal.webp';
+import nihalImage from '../assets/nihal-roshan.webp';
+import abdulImage from '../assets/abdul-muneer.webp';
 
 const Testimonials = ({ theme = 'light' }) => {
     // Styles configuration

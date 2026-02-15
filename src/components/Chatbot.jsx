@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import avatarImage from '../assets/ayisha-wave.png';
+import avatarImage from '../assets/ayisha-wave.webp';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);

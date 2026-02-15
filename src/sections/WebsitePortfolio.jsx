@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
 
 // Import assets
-import imgJewelry from '../assets/portfolio_jewelry_mockup.png';
-import imgFood from '../assets/portfolio_food_mockup.png';
-import imgCorporate from '../assets/portfolio_corporate_mockup.png';
-import imgDental from '../assets/portfolio_dental_mockup.png';
-import imgBWMC from '../assets/portfolio_bwmc_real.png';
-import imgPayyoli from '../assets/portfolio_payyoli_real.png';
-import imgLampsPlus from '../assets/portfolio_lampsplus_real.png';
-import imgJaypeedent from '../assets/portfolio_jaypeedent_real.png';
-import imgSynops from '../assets/portfolio_synopslabs_real.png';
-import imgRizq from '../assets/portfolio_rizq_real.png';
+import imgJewelry from '../assets/portfolio_jewelry_mockup.webp';
+import imgFood from '../assets/portfolio_food_mockup.webp';
+import imgCorporate from '../assets/portfolio_corporate_mockup.webp';
+import imgDental from '../assets/portfolio_dental_mockup.webp';
+import imgBWMC from '../assets/portfolio_bwmc_real.webp';
+import imgPayyoli from '../assets/portfolio_payyoli_real.webp';
+import imgLampsPlus from '../assets/portfolio_lampsplus_real.webp';
+import imgJaypeedent from '../assets/portfolio_jaypeedent_real.webp';
+import imgSynops from '../assets/portfolio_synopslabs_real.webp';
+import imgRizq from '../assets/portfolio_rizq_real.webp';
 
 const WebsitePortfolio = () => {
     const scrollContainerRef = useRef(null);
