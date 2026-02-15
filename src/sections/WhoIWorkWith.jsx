@@ -80,7 +80,7 @@ const WhoIWorkWith = () => {
                 <div className="text-center">
                     <a
                         href="https://wa.me/971543491544"
-                        className="inline-flex justify-center items-center px-8 py-4 bg-gold-500 text-white font-semibold rounded-lg hover:bg-gold-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 gap-2"
+                        className="inline-flex justify-center items-center px-8 py-4 bg-gold-500 text-deepBlue-900 font-semibold rounded-lg hover:bg-gold-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 gap-2"
                     >
                         Which One Sounds Like You? Let’s Talk <ArrowRight size={20} />
                     </a>

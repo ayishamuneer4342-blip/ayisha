@@ -80,7 +80,7 @@ const ConnectMe = () => {
                                 href="https://maps.app.goo.gl/rCaAFpbu4Fdg8bww5"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-semibold text-gold-500 hover:text-deepBlue-900 transition-colors underline decoration-gold-200 hover:decoration-deepBlue-900"
+                                className="font-semibold text-gold-700 hover:text-deepBlue-900 transition-colors underline decoration-gold-200 hover:decoration-deepBlue-900"
                             >
                                 Digital Marketing Strategist in Dubai
                             </a>

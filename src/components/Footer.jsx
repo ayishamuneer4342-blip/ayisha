@@ -77,7 +77,7 @@ const Footer = () => {
                     <p className="text-slate-500 text-sm">
                         © 2025 Ayisha Muneer. All Rights Reserved.
                     </p>
-                    <p className="text-slate-400 text-xs text-center md:text-right max-w-xs">
+                    <p className="text-slate-500 text-xs text-center md:text-right max-w-xs">
                         Designed to convert. Built for growth.
                     </p>
                 </div>
