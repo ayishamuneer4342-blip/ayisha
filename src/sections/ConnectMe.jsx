@@ -211,6 +211,7 @@ const ConnectMe = () => {
                                                 name="service"
                                                 value={formData.service}
                                                 onChange={handleChange}
+                                                aria-label="Select Service"
                                                 className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all appearance-none cursor-pointer"
                                             >
                                                 <option value="" disabled hidden>Select Service</option>
@@ -232,6 +233,7 @@ const ConnectMe = () => {
                                                 name="industry"
                                                 value={formData.industry}
                                                 onChange={handleChange}
+                                                aria-label="Select Industry"
                                                 className="w-full px-5 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all appearance-none cursor-pointer"
                                             >
                                                 <option value="" disabled hidden>Select Industry</option>
