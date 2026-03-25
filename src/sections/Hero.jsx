@@ -41,9 +41,10 @@ const Hero = () => {
                     >
                         <motion.h1
                             variants={itemVariants}
-                            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-deepBlue-900 mb-4 lg:mb-6 break-words"
+                            className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-bold leading-tight text-deepBlue-900 mb-4 lg:mb-6 md:whitespace-nowrap"
                         >
-                            Digital Marketing Strategist in Dubai, UAE <br />
+                            Digital Marketing Strategist in Dubai, UAE <br className="hidden md:block md:hidden md:hidden lg:hidden" />
+
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-deepBlue-800 to-gold-500">
                                 Grow Your Business Online
                             </span>
