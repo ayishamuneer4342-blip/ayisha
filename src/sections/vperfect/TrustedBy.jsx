@@ -17,7 +17,7 @@ const TrustedBy = () => {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-8">
                     <p className="text-sm md:text-base font-semibold text-slate-500 uppercase tracking-widest">
-                        Trusted by 50+ businesses in <span className="text-blue-600">Real Estate, Hospitality & E-commerce</span>
+                        Trusted by 20+ businesses in <span className="text-blue-600">Real Estate, Hospitality & E-commerce</span>
                     </p>
                 </div>
 

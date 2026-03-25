@@ -12,10 +12,10 @@ import pic1 from '../assets/pic1.jpg';
 
 const About = () => {
     const stats = [
-        { icon: Users, value: '50+', label: 'Happy Clients' },
-        { icon: TrendingUp, value: '200%', label: 'Avg. ROI Increase' },
-        { icon: Award, value: '8+', label: 'Years Experience' },
-        { icon: Briefcase, value: '100+', label: 'Projects Completed' }
+        { icon: Users, value: '20+', label: 'Happy Clients' },
+        { icon: TrendingUp, value: '100%', label: 'Avg. ROI Increase' },
+        { icon: Award, value: '4+', label: 'Years Experience' },
+        { icon: Briefcase, value: '30+', label: 'Projects Completed' }
     ];
 
     const expertise = [
@@ -31,24 +31,24 @@ const About = () => {
 
     const journey = [
         {
-            year: '2016',
+            year: '2020',
             title: 'Started Digital Marketing Journey',
             description: 'Began career in digital marketing, focusing on SEO and content strategy for local businesses in Dubai.'
         },
         {
-            year: '2018',
+            year: '2021',
             title: 'Expanded to Full-Service Marketing',
             description: 'Grew expertise to include paid advertising, social media, and comprehensive marketing strategies.'
         },
         {
-            year: '2020',
+            year: '2022',
             title: 'Launched Freelance Practice',
             description: 'Established independent consultancy, helping businesses across UAE scale their digital presence.'
         },
         {
             year: '2024',
             title: 'Award-Winning Strategist',
-            description: 'Recognized as a leading Digital Marketing Strategist in Dubai, serving 50+ clients with proven results.'
+            description: 'Recognized as a leading Digital Marketing Strategist in Dubai, serving 20+ clients with proven results.'
         }
     ];
 
@@ -59,7 +59,7 @@ const About = () => {
         "url": "https://ayishamuneer.com/about",
         "image": "https://ayishamuneer.com/ayisha-muneer.jpg",
         "jobTitle": "Digital Marketing Strategist",
-        "description": "Award-winning Digital Marketing Strategist in Dubai with 8+ years of experience helping businesses scale through SEO, paid advertising, and comprehensive marketing strategies.",
+        "description": "Award-winning Digital Marketing Strategist in Dubai with 4+ years of experience helping businesses scale through SEO, paid advertising, and comprehensive marketing strategies.",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Dubai",
@@ -82,7 +82,7 @@ const About = () => {
         <div className="min-h-screen bg-white font-sans text-slate-900">
             <SEO
                 title="About Ayisha Muneer | Digital Marketing Strategist in Dubai"
-                description="Learn about Ayisha Muneer, an award-winning Digital Marketing Strategist in Dubai with 8+ years of experience. Certified expert in SEO, paid ads, and marketing automation."
+                description="Learn about Ayisha Muneer, an award-winning Digital Marketing Strategist in Dubai with 4+ years of experience. Certified expert in SEO, paid ads, and marketing automation."
                 keywords="About Ayisha Muneer, Digital Marketing Strategist Dubai, Marketing Expert UAE, SEO Specialist"
                 canonical="https://ayishamuneer.com/about"
             />
@@ -110,7 +110,7 @@ const About = () => {
                                     Digital Marketing Strategist in Dubai
                                 </h2>
                                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                                    I help businesses across the UAE transform their digital presence into revenue-generating machines. With over 8 years of experience and 50+ successful client partnerships, I specialize in creating data-driven marketing strategies that deliver measurable results.
+                                    I help businesses across the UAE transform their digital presence into revenue-generating machines. With over 4 years of experience and 20+ successful client partnerships, I specialize in creating data-driven marketing strategies that deliver measurable results.
                                 </p>
                                 <p className="text-lg text-slate-600 leading-relaxed">
                                     My approach combines technical SEO expertise, creative content strategy, and performance marketing to help businesses scale sustainably. Whether you're a startup looking to establish your brand or an established company aiming to dominate your market, I bring the strategic insight and hands-on execution you need.

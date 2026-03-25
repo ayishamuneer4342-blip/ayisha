@@ -84,7 +84,7 @@ const Achievements = () => {
                         {/* Stat 1 */}
                         <div className="text-center px-4 py-4 group hover:-translate-y-1 transition-transform duration-300">
                             <div className="text-4xl lg:text-5xl font-bold mb-2 font-display text-deepBlue-900 group-hover:text-gold-500 transition-colors">
-                                8+
+                                4+
                             </div>
                             <div className="text-sm font-bold tracking-wider text-slate-500 uppercase group-hover:text-slate-700">
                                 Years of Experience
@@ -110,7 +110,7 @@ const Achievements = () => {
                         {/* Stat 3 */}
                         <div className="text-center px-4 py-4 group hover:-translate-y-1 transition-transform duration-300">
                             <div className="text-4xl lg:text-5xl font-bold mb-2 font-display text-deepBlue-900 group-hover:text-gold-500 transition-colors">
-                                50+
+                                20+
                             </div>
                             <div className="text-sm font-bold tracking-wider text-slate-500 uppercase group-hover:text-slate-700">
                                 Satisfied Clients

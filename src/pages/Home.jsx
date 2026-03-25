@@ -122,7 +122,7 @@ function Home() {
         <div className="min-h-screen bg-white font-sans text-slate-900">
             <SEO
                 title="Digital Marketing Strategist in Dubai | Ayisha Muneer | UAE Expert"
-                description="Award-winning Digital Marketing Strategist in Dubai helping businesses scale with SEO, paid ads, content marketing & automation. 50+ clients across UAE. Book free consultation."
+                description="Award-winning Digital Marketing Strategist in Dubai helping businesses scale with SEO, paid ads, content marketing & automation. 20+ clients across UAE. Book free consultation."
                 keywords="Digital Marketing Strategist Dubai, Digital Marketing Strategist UAE, Marketing Strategist Dubai, Digital Marketing Consultant Dubai, Freelance Digital Marketing Strategist, SEO Expert Dubai, PPC Specialist UAE"
                 canonical="https://ayishamuneer.com/"
             />
