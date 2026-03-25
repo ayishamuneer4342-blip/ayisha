@@ -30,14 +30,14 @@ const Hero = () => {
             <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-deepBlue-900/5 blur-3xl rounded-full -translate-x-1/2 translate-y-1/2" />
 
             <div className="container mx-auto px-4 md:px-6 z-10">
-                <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div className="flex flex-col items-center justify-center">
 
-                    {/* Left Content */}
+                    {/* Main Content */}
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="lg:col-span-7 px-1 sm:px-0 pt-24"
+                        className="w-full max-w-5xl mx-auto px-1 sm:px-0 pt-24 text-center"
                     >
                         <motion.h1
                             variants={itemVariants}
@@ -60,7 +60,7 @@ const Hero = () => {
                             As a Digital Marketing Strategist and SEO Consultant in Dubai, I specialize in performance marketing, Google Ads, Meta Ads, and lead generation strategies. I help businesses across the UAE transform their online presence into a revenue-generating machine through data-driven SEO, PPC campaigns, and marketing automation.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 lg:mb-10">
+                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 lg:mb-10 justify-center">
                             <a
                                 href="https://wa.me/971543491544"
                                 className="inline-flex justify-center items-center px-6 py-3.5 sm:px-8 sm:py-4 bg-deepBlue-900 text-white font-semibold rounded-lg hover:bg-deepBlue-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-sm sm:text-base"
@@ -75,12 +75,12 @@ const Hero = () => {
                             </a>
                         </motion.div>
 
-                        <motion.div variants={itemVariants} className="hidden sm:block pt-6 sm:pt-8 border-t border-slate-200">
-                            <p className="text-xs sm:text-sm font-medium text-black mb-3 flex items-center gap-2">
+                        <motion.div variants={itemVariants} className="hidden sm:flex flex-col items-center pt-6 sm:pt-8 border-t border-slate-200">
+                            <p className="text-xs sm:text-sm font-medium text-black mb-3 flex items-center justify-center gap-2">
                                 <CheckCircle size={14} className="text-gold-500" />
                                 Trusted by 50+ businesses in Real Estate, Hospitality & E-commerce
                             </p>
-                            <div className="overflow-hidden w-full relative">
+                            <div className="overflow-hidden w-full max-w-4xl mx-auto relative">
                                 <motion.div
                                     className="flex gap-16 items-center w-max"
                                     animate={{ x: [0, -1000] }} // Moving left to simulate continuous scroll (standard marquee) 
@@ -107,32 +107,6 @@ const Hero = () => {
                                 </motion.div>
                             </div>
                         </motion.div>
-                    </motion.div>
-
-                    {/* Right Image & Floating Stats */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8 }}
-                        className="lg:col-span-5 relative flex items-center justify-center lg:h-[600px] mt-8 lg:mt-0"
-                    >
-                        {/* Main Image Placeholder - Professional Headshot vibe */}
-                        <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-slate-200">
-                            <img
-                                src="/assets/pic1.webp"
-                                alt="Ayisha Muneer - Digital Marketing Strategist in Dubai, UAE"
-                                title="Award-Winning Digital Marketing Strategist | Dubai, UAE"
-                                className="w-full h-full object-cover"
-                                width="448"
-                                height="597"
-                                fetchPriority="high"
-                                loading="eager"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-deepBlue-900/40 to-transparent" />
-                        </div>
-
-
-
                     </motion.div>
                 </div>
             </div>
