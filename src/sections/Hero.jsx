@@ -41,21 +41,24 @@ const Hero = () => {
                     >
                         <motion.h1
                             variants={itemVariants}
-                            className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-bold leading-tight text-deepBlue-900 mb-4 lg:mb-6 md:whitespace-nowrap"
+                            className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-bold leading-tight text-deepBlue-900 mb-2 md:whitespace-nowrap"
                         >
-                            Digital Marketing Strategist in Dubai, UAE <br className="hidden md:block md:hidden md:hidden lg:hidden" />
-
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-deepBlue-800 to-gold-500">
-                                Grow Your Business Online
-                            </span>
+                            Digital Marketing Strategist in Dubai, UAE
                         </motion.h1>
 
                         <motion.h2
                             variants={itemVariants}
+                            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-deepBlue-800 to-gold-500 mb-4 lg:mb-6"
+                        >
+                            Grow Your Business Online
+                        </motion.h2>
+
+                        <motion.h3
+                            variants={itemVariants}
                             className="text-lg sm:text-xl lg:text-2xl font-semibold text-slate-700 mb-4"
                         >
                             SEO Consultant, Performance Marketing Specialist & Lead Generation Expert
-                        </motion.h2>
+                        </motion.h3>
 
                         <motion.p variants={itemVariants} className="text-sm sm:text-lg text-slate-600 mb-6 lg:mb-8 leading-relaxed">
                             As a Digital Marketing Strategist and SEO Consultant in Dubai, I specialize in performance marketing, Google Ads, Meta Ads, and lead generation strategies. I help businesses across the UAE transform their online presence into a revenue-generating machine through data-driven SEO, PPC campaigns, and marketing automation.
